@@ -1,0 +1,9 @@
+<%= form_for :marca, url: marcas_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <input type="submit" data-disable-with="Save Marca" value="Save Marca" name="commit">
+  </p>
+<% end %>
