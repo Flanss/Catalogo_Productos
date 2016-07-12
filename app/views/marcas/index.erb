@@ -1,6 +1,6 @@
 <h1>Lista de Marcas</h1>
  
-<table>
+<table class="table">
   <tr>
     <th>Nombre</th>
     <th>Acciones</th>
@@ -9,7 +9,7 @@
   <% @marca.each do |marca| %>
     <tr>
         <td><%= marca.nombre %></td>
-     	<td><%= link_to 'Editar', edit_marca_path(marca) %> <%= link_to 'Eliminar', marca_path(marca),
+     	<td><%= link_to 'Editar', edit_marca_path(marca), class: "btn btn-success btn-xs" %> <%= link_to 'Eliminar', marca_path(marca),
               method: :delete,
               data: { confirm: 'Estas seguro?' } %></td>
     </tr>
