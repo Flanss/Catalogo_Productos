@@ -1,0 +1,24 @@
+<h1>Crear nueva marca</h1>
+<%= form_for :marca, url: marcas_path do |f| %>
+
+ <% if @marca.errors.any? %>
+   <div class="row">
+     <div class="alert alert-danger col-md-4">
+        <p>
+          El nombre de la marca no puede estar vacio!.
+        </p>
+      </div>
+   </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-2">
+      <p>
+        <%= f.label :Nombre %><br>
+        <%= f.text_field :nombre, class: "form-control" %>
+      </p>
+      <p>
+        <input type="submit" class="btn btn-success" data-disable-with="Save Marca" value="Guardar" name="commit">
+      </p>
+      </div>
+  </div>
+<% end %>
