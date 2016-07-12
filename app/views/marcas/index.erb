@@ -9,9 +9,9 @@
   <% @marca.each do |marca| %>
     <tr>
         <td><%= marca.nombre %></td>
-      <td><%= link_to 'Editar', edit_marca_path(marca) %> <%= link_to 'Eliminar', marca_path(marca),
+     	<td><%= link_to 'Editar', edit_marca_path(marca) %> <%= link_to 'Eliminar', marca_path(marca),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Estas seguro?' } %></td>
     </tr>
   <% end %>
 </table>
