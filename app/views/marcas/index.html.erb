@@ -13,7 +13,7 @@
 		        <td><%= marca.nombre %></td>
 		     	<td class="text-center"><%= link_to 'Editar', edit_marca_path(marca), class: "btn btn-success btn-xs" %> <%= link_to 'Eliminar', marca_path(marca),class: "btn btn-danger btn-xs",
 		              method: :delete,
-		              data: { confirm: 'Estas seguro?' } %></td>
+		              data: { confirm: 'Estas seguro?, Tambien eliminaras todos los productos asociados' } %></td>
 		    </tr>
 		  <% end %>
 		</table>

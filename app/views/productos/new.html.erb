@@ -1,0 +1,38 @@
+<h1>Crear nuevo producto</h1>
+<%= form_for :producto, url: productos_path do |f| %>
+
+  <% if @producto.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @producto.errors.full_messages.each do |msg| %>
+         <div class="row">
+     <div class="alert alert-danger col-md-4">
+        <p>
+          <%= msg %>
+        </p>
+      </div>
+   </div>
+         
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="row">
+    <div class="col-md-2">
+      <p>
+        <%= f.label :Nombre %><br>
+        <%= f.text_field :nombre, class: "form-control" %><br>
+        <%= f.label :Marca %><br>
+        <%= f.select :marca ,@marca.all.collect{|m| [m.nombre] },{}, {class: "form-control"}%><br>
+        <%= f.label :Descripcion %><br>
+        <%= f.text_field :descripcion, class: "form-control" %><br>
+        <%= f.label :Precio %><br>
+        <%= f.text_field :precio, class: "form-control" %>
+      </p>
+      <p>
+        <input type="submit" class="btn btn-success" data-disable-with="Save Marca" value="Guardar" name="commit">
+      </p>
+      </div>
+  </div>
+<% end %>

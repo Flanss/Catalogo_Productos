@@ -1,6 +1,6 @@
 class MarcasController < ApplicationController
 	def index
-		@marca = Marca.all;
+		@marca = Marca.all
 	end
 	def show
 		@marca = Marca.find(params[:id])
@@ -10,6 +10,7 @@ class MarcasController < ApplicationController
 	end
 	def edit
 	  @marca = Marca.find(params[:id])
+
 	end
 	def create
 		@marca = Marca.new(marca_params)
@@ -20,17 +21,24 @@ class MarcasController < ApplicationController
 	end
 	def update
 	  @marca = Marca.find(params[:id])
-	 
+	  @producto = Producto.where(marca: @marca.nombre)
 	  if @marca.update(marca_params)
-	    redirect_to action: "index"
-	  else
-	    render 'edit'
-	  end
+		  	@marca = Marca.find(params[:id])
+		  	@producto.each do |produ|
+		    @producto.update(marca: @marca.nombre )
+	 		 end 
+		redirect_to action: "index"
+	   else render 'edit' 
+		end
 	end
 
 	def destroy
-	    @marca = Marca.find(params[:id])
-	    @marca.destroy
+		@marca = Marca.find(params[:id])
+		@producto = Producto.where(marca: @marca.nombre)
+	    @producto.each do |produ|
+	    @producto.destroy(produ.id)
+		end
+		@marca.destroy
 	    redirect_to action: "index"
  	 end
 
