@@ -3,24 +3,29 @@
   <head>
     <title>Ejersicio</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  	<nav class="navbar navbar-default">
-  		<div class="container-fluid">
-  			<div class="navbar-header">
-  				<a class="navbar-brand" href="https://github.com/Flanss/Catalogo_Productos">Proyecto</a>
-  			</div>
-  			<ul class="nav navbar-nav">
-  				<li class="active"><li><%= link_to 'Inicio', controller: 'welcome' %></li></li>
-  				<li><%= link_to 'Marcas', controller: 'marcas' %></li>
-  				<li><%= link_to 'Productos', controller: 'productos' %></li> 
-  			</ul>
-  		</div>
-  	</nav>
+
+  <div class="container" >
+  <div class="col-md-7 col-md-offset-2">
+     <img  src="http://hantechnologies.org/images/prd2.png" class="img-responsive img-circle" >
+      	<nav class="navbar navbar-default">
+      		<div class="container-fluid">
+      			<div class="navbar-header">
+      				<a class="navbar-brand" href="https://github.com/Flanss/Catalogo_Productos">Proyecto</a>
+      			</div>
+      			<ul class="nav navbar-nav">
+      				<li class="active"><li><%= link_to 'Inicio', controller: 'welcome' %></li></li>
+      				<li><%= link_to 'Marcas', controller: 'marcas' %></li>
+      				<li><%= link_to 'Productos', controller: 'productos' %></li> 
+      			</ul>
+      		</div>
+      	</nav>
+    </div>
+    </div>
    <div class="container">
     <%= yield %>
     </div>
