@@ -2,25 +2,23 @@
 	<div class="col-md-8 col-md-offset-2 well well-sm">
 		<div class="row">
    			<div class="col-md-3"><h5>Lista de Productos</h5></div>
-
   			 <div class="col-md-9"><%= link_to 'Nuevo producto', new_producto_path, class: "btn btn-success btn-xs pull-right" %></div>
     	</div>
 		<table class="table table-striped">
-		  <tr>
-		    <th class="text-center">Nombre</th>
-		    <th class="text-center">Marca</th>
-		    <th class="text-center">Descripcion</th>
-		    <th class="text-center">Precio</th>
-		     <th class="text-center">Acciones</th>
-		  </tr>
-		 
+		  <tr class="center">
+		    <th >Nombre</th>
+		    <th >Marca</th>
+		    <th >Descripcion</th>
+		    <th >Precio</th>
+		    <th >Acciones</th>
+		  </tr> 
 		  <% @producto.each do |producto| %>   
-		    <tr>
-		        <td class="text-center"><%= producto.nombre %></td>
-		     	<td class="text-center"><%= producto.marca %></td>
-		     	<td class="text-center"><%= producto.descripcion %></td>
-		     	<td class="text-center"><%= number_to_currency(producto.precio, :unit => "$") %></td>
-		     	<td class="text-center"><%= link_to 'Editar', edit_producto_path(producto), class: "btn btn-primary btn-xs" %> <%= link_to 'Eliminar', producto_path(producto),class: "btn btn-danger btn-xs",
+		    <tr class="center">
+		        <td><%= producto.nombre %></td>
+		     	<td><%= producto.marca %></td>
+		     	<td><%= producto.descripcion %></td>
+		     	<td><%= number_to_currency(producto.precio, :unit => "$") %></td>
+		     	<td><%= link_to 'Editar', edit_producto_path(producto), class: "btn btn-primary btn-xs" %> <%= link_to 'Eliminar', producto_path(producto),class: "btn btn-danger btn-xs",
 		              method: :delete,
 		              data: { confirm: 'Estas seguro?' } %></td>
 		    </tr>
