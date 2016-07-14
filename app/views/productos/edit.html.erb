@@ -1,5 +1,11 @@
-<h1>Editar producto</h1>
-<%= form_for :producto, url: producto_path(@producto), method: :patch do |f| %>
+<div class="row">
+  <div class="col-md-7 col-md-offset-2 well well-sm">
+    <div class="row">
+        <div class="col-md-3"><h5>Editar producto</h5></div>
+    </div>
+      <%= form_for :producto, url: producto_path(@producto), :html => {:class => 'form-horizontal'}, method: :patch do |f| %>
+    
+
   <% if @producto.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -16,18 +22,28 @@
       </ul>
     </div>
   <% end %>
+ 
   <div class="row">
-    <div class="col-md-2">
-      <p>
-        <%= f.label :Nombre %><br>
-        <%= f.text_field :nombre, class: "form-control" %><br>
-        <%= f.select :marca ,@marca.all.collect{|m| [m.nombre] },{}, {class: "form-control"}%><br>
-        <%= f.text_field :descripcion, class: "form-control" %><br>
-            <%= f.text_field :precio, class: "form-control" %>
-      </p>
-      <p>
-        <input type="submit" class="btn btn-success" data-disable-with="Save Marca" value="Guardar" name="commit">
-      </p>
+    <div class="col-md-4 col-md-offset-4">
+       <div class="form-group">
+          <%= f.label :Nombre %>
+          <%= f.text_field :nombre, class: "form-control" %>
+          <%= f.label :Marca %>
+          <%= f.select :marca ,@marca.all.collect{|m| [m.nombre] },{}, {class: "form-control"}%>
+     
+          <%= f.label :Descripcion %>
+          <%= f.text_field :descripcion, class: "form-control" %>
+          <%= f.label :Precio %>
+          <%= f.text_field :precio, class: "form-control" %>
+       </div>
       </div>
+      
+        
+    
+      </div>
+      <input type="submit" class="btn btn-success pull-right" data-disable-with="Save Marca" value="Guardar" name="commit">
   </div>
-  <% end %>
+<% end %>
+  </div>
+</div>
+

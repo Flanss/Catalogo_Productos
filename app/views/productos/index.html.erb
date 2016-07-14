@@ -1,7 +1,12 @@
-<h1>Lista de Productos</h1>
- <%= link_to 'Nuevo producto', new_producto_path, class: "btn btn-success btn-xs" %>
+
+ 
 <div class="row">
-	<div class="col-md-4 col-md-offset-4">
+	<div class="col-md-7 col-md-offset-2 well well-sm">
+		<div class="row">
+   			<div class="col-md-3"><h5>Lista de Productos</h5></div>
+
+  			 <div class="col-md-9"><%= link_to 'Nuevo producto', new_producto_path, class: "btn btn-success btn-xs pull-right" %></div>
+    	</div>
 		<table class="table table-striped table-bordered">
 		  <tr>
 		    <th class="text-center">Nombre</th>
@@ -23,6 +28,6 @@
 		    </tr>
 		  <% end %>
 		</table>
-		<p> <%=number_to_currency(@total, :unit => "$") %></p>
+		<p class="pull-right"> Total: <%=number_to_currency(@total, :unit => "$") %></p>
 	</div>
 </div>
