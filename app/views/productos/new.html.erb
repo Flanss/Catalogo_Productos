@@ -27,8 +27,7 @@
           <%= f.label :Nombre %>
           <%= f.text_field :nombre, class: "form-control" %>
           <%= f.label :Marca %>
-          <%= f.select :marca ,@marca.all.collect{|m| [m.nombre] },{}, {class: "form-control"}%>
-
+          <%= f.select :marca_id ,@marca.all.collect{|m| [m.nombre, m.id] },{}, {class: "form-control"}%>
           <%= f.label :Descripcion %>
           <%= f.text_field :descripcion, class: "form-control" %>
           <%= f.label :Precio %>

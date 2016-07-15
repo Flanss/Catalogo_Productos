@@ -5,7 +5,6 @@
     </div>
       <%= form_for :producto, url: producto_path(@producto), :html => {:class => 'form-horizontal'}, method: :patch do |f| %>
     
-
   <% if @producto.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -29,7 +28,7 @@
           <%= f.label :Nombre %>
           <%= f.text_field :nombre, class: "form-control" %>
           <%= f.label :Marca %>
-          <%= f.select :marca ,@marca.all.collect{|m| [m.nombre] },{}, {class: "form-control"}%>
+          <%= f.select :marca_id ,@marca.all.collect{|m| [m.nombre, m.id] },{}, {class: "form-control"}%>
      
           <%= f.label :Descripcion %>
           <%= f.text_field :descripcion, class: "form-control" %>
@@ -37,9 +36,6 @@
           <%= f.text_field :precio, class: "form-control" %>
        </div>
       </div>
-      
-        
-    
       </div>
       <input type="submit" class="btn btn-success pull-right" data-disable-with="Save Marca" value="Guardar" name="commit">
   </div>

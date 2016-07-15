@@ -14,8 +14,9 @@
 		  </tr> 
 		  <% @producto.each do |producto| %>   
 		    <tr class="center">
+
 		        <td><%= producto.nombre %></td>
-		     	<td><%= producto.marca %></td>
+		     	<td><%= producto.marca.nombre %></td>
 		     	<td><%= producto.descripcion %></td>
 		     	<td><%= number_to_currency(producto.precio, :unit => "$") %></td>
 		     	<td><%= link_to 'Editar', edit_producto_path(producto), class: "btn btn-primary btn-xs" %> <%= link_to 'Eliminar', producto_path(producto),class: "btn btn-danger btn-xs",
