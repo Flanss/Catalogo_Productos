@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160715175024) do
   create_table "productos", force: :cascade do |t|
     t.string   "nombre"
     t.integer "marca_id"
-    t.index ["marca_id"], name: "index_roductos_on_marca_id"
+    t.index ["marca_id"], name: "index_productos_on_marca_id"
     t.text     "descripcion"
     t.float    "precio"
     t.datetime "created_at",  null: false
